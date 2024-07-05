@@ -58,7 +58,6 @@ app.use(passport.session());
 const PORT = 4000;
 
 function checkLoggedIn(req, res, next) {
-  console.log("Current user is : ", req?.user);
   const isLoggedIn = req.isAuthenticated() && req?.user; // TODO
   if (!isLoggedIn) {
     return res.status(401).json({
